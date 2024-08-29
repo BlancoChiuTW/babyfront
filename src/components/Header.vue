@@ -3,20 +3,28 @@
     <div class="header-container">
       <!-- 品牌標誌 -->
       <div class="site-logo">
-        <img src="/logo.png" alt="寶貝網 Logo" class="logo-image">
+        <router-link to="/">
+          <img src="/logo1.png" alt="寶貝網 Logo" class="logo-image" />
+        </router-link>
       </div>
 
       <!-- 搜尋框 -->
       <div class="search-bar">
         <select class="form-select search-select">
-          <option selected>全部</option>
-          <option value="1">上衣</option>
-          <option value="2">下裝</option>
-          <option value="3">外套</option>
-          <option value="4">飾品</option>
-          <option value="5">生活用品</option>
+          <option value="all" selected>全品項</option>
+          <option value="watch">手錶</option>
+          <option value="bag">包包</option>
+          <option value="clothes">衣服</option>
+          <option value="pants">褲子</option>
+          <option value="hat">帽子</option>
+          <option value="wig">假髮</option>
+          <option value="bracelet">手鍊</option>
         </select>
-        <input type="text" class="form-control search-input" placeholder="搜尋...">
+        <input
+          type="text"
+          class="form-control search-input"
+          placeholder="搜尋商品..."
+        />
         <button class="btn btn-search">
           <i class="fas fa-search"></i>
         </button>
@@ -42,15 +50,16 @@
     <!-- 導覽列 -->
     <nav class="navigation-bar">
       <div class="nav-container">
-        <a href="#" class="nav-link">
+        <router-link to="/" class="nav-link">
           <i class="fas fa-bars"></i>
-          全部
-        </a>
-        <a href="#" class="nav-link">今日優惠</a>
-        <a href="#" class="nav-link">客服服務部</a>
-        <a href="#" class="nav-link">禮品單</a>
-        <a href="#" class="nav-link">禮品卡</a>
-        <a href="#" class="nav-link">我要開店</a>
+          全部品項
+        </router-link>
+        <router-link to="/" class="nav-link">今日新品</router-link>
+        <router-link to="/" class="nav-link">優惠商品</router-link>
+        <router-link to="/about-babybox" class="nav-link">關於BabyBox</router-link>
+        <router-link to="/contact-babybox" class="nav-link">聯絡BabyBox</router-link>
+        <router-link to="/help-center" class="nav-link">幫助中心</router-link>
+        <router-link to="/return-policy" class="nav-link">退換貨說明</router-link>
       </div>
     </nav>
   </header>
@@ -58,7 +67,7 @@
 
 <script>
 export default {
-  name: 'SiteHeader',
+  name: "SiteHeader",
 };
 </script>
 
@@ -79,7 +88,7 @@ export default {
 
 /* 品牌標誌樣式 */
 .site-logo {
-  width: 10%;  /* 占据10%宽度 */
+  width: 10%; /* 占据10%宽度 */
   display: flex;
   align-items: center;
 }
@@ -91,7 +100,7 @@ export default {
 
 /* 搜尋框樣式 */
 .search-bar {
-  width: 75%;  /* 占据75%宽度 */
+  width: 75%; /* 占据75%宽度 */
   display: flex;
   align-items: center;
   background-color: #fff;
@@ -114,12 +123,15 @@ export default {
   padding: 10px;
   border-radius: 0;
   background-color: #f5f5f5;
+  font-weight: 700;
 }
 
-.search-input:focus, .search-select:focus {
-  box-shadow: 0  0 10px  rgba(49, 129, 221, 0.65); /* 柔和的蓝色阴影效果 */
+.search-input:focus,
+.search-select:focus {
+  box-shadow: 0 0 10px rgba(221, 169, 25, 0.65); /* 柔和的蓝色阴影效果 */
   outline: none;
   background-color: #fff;
+  font-weight: 700;
 }
 
 .btn-search {
@@ -144,7 +156,7 @@ export default {
 
 /* 用户操作区域样式 */
 .user-actions {
-  width: 15%;  /* 占据15%宽度 */
+  width: 15%; /* 占据15%宽度 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,7 +218,8 @@ export default {
 }
 
 /* 响应式设计 */
-@media (max-width: 768px) { /* Mobile */
+@media (max-width: 768px) {
+  /* Mobile */
   .header-container {
     flex-direction: column;
     align-items: center;
@@ -276,10 +289,9 @@ export default {
   }
 
   /* 隐藏导航栏 */
-  .navigation-bar ,
+  .navigation-bar,
   .account-tilte {
     display: none;
   }
 }
-
 </style>

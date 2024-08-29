@@ -1,7 +1,7 @@
 <template>
   <div class="product-card card">
     <h5 class="card-title">{{ title }}</h5>
-    <img :src="imageSrc" class="card-img-top" :alt="imageAlt">
+    <img :src="imageSrc" class="card-img-top" :alt="imageAlt" />
     <div class="card-body">
       <a :href="linkUrl" class="card-ad-text">{{ adText }}</a>
     </div>
@@ -10,29 +10,29 @@
 
 <script>
 export default {
-  name: 'ProductCard',
+  name: "ProductCard",
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     imageSrc: {
       type: String,
-      required: true
+      required: true,
     },
     imageAlt: {
       type: String,
-      default: '商品圖片'
+      default: "商品圖片",
     },
     adText: {
       type: String,
-      required: true
+      required: true,
     },
     linkUrl: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -41,19 +41,25 @@ export default {
   width: 100%; /* 自适应宽度 */
   margin: 10px; /* 卡片之间的间距 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-  border: none; 
+  border: none;
   border-radius: 12px; /* 使四个角更加圆滑 */
   overflow: hidden; /* 确保内容不会溢出圆角 */
 }
 
 .product-card .card-img-top {
-  width: 100%;
-  height: auto; 
-  object-fit: cover; 
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* 讓圖片填滿框架，並裁剪超出部分 */
+  border-radius: 12px 12px 0 0; /* 圓角和卡片保持一致 */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+
 }
 
 .product-card .card-body {
-  padding: 15px; /* 调整内边距 */
+  margin: 10px; /* 调整内边距 */
 }
 
 .product-card .card-title {

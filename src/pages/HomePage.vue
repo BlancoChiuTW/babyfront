@@ -41,53 +41,6 @@
             />
           </div>
         </div>
-        <div class="banner_product">
-          <BannerProductCard
-            title="與您已檢視的商品有關"
-            moreText="查看更多"
-            moreLink="#"
-            :products="bannerProducts"
-          />
-        </div>
-        <div class="banner_product">
-          <BannerProductCard
-            title="與您已檢視的商品有關"
-            moreText="查看更多"
-            moreLink="#"
-            :products="bannerProducts"
-          />
-        </div>
-        <div class="product-cards-container">
-          <div
-            v-for="product in products"
-            :key="product.id"
-            class="product-card"
-          >
-            <ProductCard
-              :title="product.title"
-              :imageSrc="product.imageSrc"
-              :imageAlt="product.imageAlt"
-              :adText="product.adText"
-              :linkUrl="product.linkUrl"
-            />
-          </div>
-        </div>
-        <div class="banner_product">
-          <BannerProductCard
-            title="與您已檢視的商品有關"
-            moreText="查看更多"
-            moreLink="#"
-            :products="bannerProducts"
-          />
-        </div>
-        <div class="banner_product">
-          <BannerProductCard
-            title="與您已檢視的商品有關"
-            moreText="查看更多"
-            moreLink="#"
-            :products="bannerProducts"
-          />
-        </div>
         <div class="product-cards-container">
           <div
             v-for="product in products"
@@ -118,13 +71,20 @@
             />
           </div>
         </div>
-        <div class="banner_product">
-          <BannerProductCard
-            title="與您已檢視的商品有關"
-            moreText="查看更多"
-            moreLink="#"
-            :products="bannerProducts"
-          />
+        <div class="product-cards-container">
+          <div
+            v-for="product in products"
+            :key="product.id"
+            class="product-card"
+          >
+            <ProductCard
+              :title="product.title"
+              :imageSrc="product.imageSrc"
+              :imageAlt="product.imageAlt"
+              :adText="product.adText"
+              :linkUrl="product.linkUrl"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -141,7 +101,7 @@ import SiteHeader from "@/components/Header.vue";
 import SiteFooter from "@/components/Footer.vue";
 import Banner from "@/components/Banner.vue";
 import ProductCard from "@/components/ProductCard.vue";
-import BannerProductCard from "@/components/BannerProductCard.vue";
+import { fetchProducts } from "@/assets/data.js";
 
 export default {
   name: "HomePage",
@@ -150,70 +110,25 @@ export default {
     SiteFooter,
     Banner,
     ProductCard,
-    BannerProductCard,
   },
   data() {
     return {
-      products: [
-        {
-          id: 1,
-          title: "$50 以下家具新品",
-          imageSrc: "/images1.jpg",
-          imageAlt: "images1",
-          adText: "從家具購買最新商品",
-          linkUrl: "#",
-        },
-        {
-          id: 2,
-          title: "免費運送至台灣",
-          imageSrc: "/images1.jpg",
-          imageAlt: "images1",
-          adText: "如果符合條件的訂單超過$60美元",
-          linkUrl: "#",
-        },
-        {
-          id: 3,
-          title: "電子產品",
-          imageSrc: "/images1.jpg",
-          imageAlt: "images1",
-          adText: "查看更多",
-          linkUrl: "#",
-        },
-        {
-          id: 4,
-          title: "個人電腦優惠商品",
-          imageSrc: "/images1.jpg",
-          imageAlt: "images1",
-          adText: "立即購買",
-          linkUrl: "#",
-        },
-        // 可以继续添加更多商品卡片...
-      ],
-      bannerProducts: this.generateBannerProducts(),
+      products: [],
+      productRows: [1, 2, 3, 4], // 用来控制重复行的数量
     };
   },
+  created() {
+    this.loadProducts();
+  },
   methods: {
-    generateBannerProducts() {
-      const images = [
-        "/images2.jpg",
-        "/images3.jpg",
-        "/images4.jpg",
-        "/images5.jpg",
-      ];
-      const bannerProducts = [];
-      for (let i = 0; i < 20; i++) {
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-        bannerProducts.push({
-          src: randomImage,
-          alt: `Banner Image ${i + 1}`,
-        });
-      }
-      return bannerProducts;
+    loadProducts() {
+      fetchProducts().then((products) => {
+        this.products = products;
+      });
     },
   },
 };
 </script>
-
 <style scoped>
 .homepage {
   display: flex;
@@ -275,8 +190,8 @@ export default {
 }
 @media (max-width: 768px) {
   /* 隐藏 Banner 在移动设备上的显示 */
-  .content-header ,
-  .product-card-top ,
+  .content-header,
+  .product-card-top,
   .account-tilte {
     display: none;
   }

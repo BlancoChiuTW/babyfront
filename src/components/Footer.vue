@@ -2,7 +2,7 @@
   <footer class="site-footer">
     <div class="footer-top">
       <div class="footer-logo">
-        <img src="/logo.png" alt="寶貝網 Logo" class="logo-image">
+        <img src="/logo2.png" alt="寶貝網 Logo" class="logo-image">
       </div>
       <div class="footer-links">
         <div class="footer-column" v-for="(column, index) in footerColumns" :key="index">
@@ -16,11 +16,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-language">
-        <select v-model="selectedLanguage">
+      <div >
+        <select v-model="selectedLanguage" class="footer-language">
           <option value="zh">中文 (繁體)</option>
           <option value="en">English</option>
-
         </select>
       </div>
       <div class="footer-copyright">
@@ -105,7 +104,7 @@ export default {
 }
 
 .footer-logo img {
-  max-height: 60px;
+  max-height: 200px;
 }
 
 .footer-links {
@@ -152,7 +151,7 @@ export default {
   padding-top: 20px;
 }
 
-.footer-language select {
+.footer-language  {
   background-color: #232f3e;
   color: white;
   border: 1px solid #3a4553;
@@ -165,9 +164,8 @@ export default {
   margin: 0;
 }
 .logo-image{
-  max-width: 100%;
-  height: auto;
   width: auto;
+  height: auto;
 }
 
 @media (max-width: 768px) {

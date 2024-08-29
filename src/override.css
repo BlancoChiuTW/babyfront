@@ -1,0 +1,65 @@
+.site-header {
+    background-color: #FF8C00 !important; /* 深橙色 */
+}
+.site-footer {
+    background-color: #FFA500 !important; /* 橙色 */
+}
+
+.account-link,
+ .cart-link {
+    color: #8B4513; /* 棕色 */
+}
+
+.btn-search {
+    background-color: #FFD700 !important; /* 金色 */
+    color: #8B4513 !important; /* 棕色 */
+}
+
+ .btn-search:hover {
+    background-color: #FF8C00 !important; /* 深橙色 */
+}
+
+ .navigation-bar {
+    background-color: #8B4513 !important; /* 棕色 */
+}
+
+ .footer-language {
+    background-color: #8B4513 !important; /* 棕色 */
+}
+
+ .product-card .card-title {
+    color: #FF8C00 !important; /* 深橙色 */
+}
+
+ .product-card .card-ad-text {
+    color: #FFA500 !important; /* 橙色 */
+}
+
+.product-card .card-ad-text:hover {
+    color: #FFD700 !important; /* 金色 */
+}
+
+.banner-product-card .scroll-button {
+    background-color: #FFA500 !important; /* 橙色 */
+}
+
+.banner-product-card .scroll-button:hover {
+    background-color: #FF8C00 !important; /* 深橙色 */
+}
+
+.banner-control.prev,
+.banner-control.next {
+    background-color: transparent !important; /* Transparent */
+}
+
+.banner-control {
+    color: #8B4513 !important; /* 棕色 */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #FFA500 !important; /* 橙色 */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #FFD700 !important; /* 金色 */
+}

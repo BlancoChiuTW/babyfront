@@ -39,7 +39,6 @@ export default {
 <style scoped>
 .product-card {
   width: 100%; /* 自适应宽度 */
-  margin: 10px; /* 卡片之间的间距 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
   border: none;
   border-radius: 12px; /* 使四个角更加圆滑 */

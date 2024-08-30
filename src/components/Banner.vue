@@ -54,7 +54,7 @@ export default {
 <style scoped>
 .banner-container {
   position: relative;
-  width: 1500px;
+  width: 1650px;
   height: 600px;
   overflow: hidden;
   margin: auto; /* 居中对齐 */
@@ -64,6 +64,7 @@ export default {
   display: flex;
   transition: transform 0.25s ease-in-out; /* 调整滑动速度 */
   height: 100%; /* 保持slider和容器高度一致 */
+  width: 100%;
 }
 
 .banner-slide {

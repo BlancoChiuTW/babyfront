@@ -31,7 +31,7 @@
       </div>
 
       <!-- 帳戶 & 購物車 -->
-      <div class="user-actions">
+    <!--   <div class="user-actions">
         <div class="user-account">
           <a href="#" class="account-link">
             <i class="fa-solid fa-circle-user"></i>
@@ -44,9 +44,8 @@
             <span class="cart-count">0</span>
           </a>
         </div>
-      </div>
-    </div>
-
+      </div>-->
+    </div> 
     <!-- 導覽列 -->
     <nav class="navigation-bar">
       <div class="nav-container">
@@ -81,7 +80,6 @@ export default {
 .header-container {
   height: 100px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
 }
@@ -107,6 +105,7 @@ export default {
   border-radius: 100px;
   padding: 5px 10px;
   box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 60px;
 }
 
 .search-select {

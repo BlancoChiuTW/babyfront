@@ -28,15 +28,16 @@
 }
 
  .product-card .card-title {
-    color: #FF8C00 !important; /* 深橙色 */
+    color: #F8B62D !important; /* 深橙色 */
 }
 
  .product-card .card-ad-text {
-    color: #FFA500 !important; /* 橙色 */
+    color: #7F4F21 !important; /* 橙色 */
 }
 
 .product-card .card-ad-text:hover {
-    color: #FFD700 !important; /* 金色 */
+    color: #3a2511 !important; /* 金色 */
+    font-weight: 600;
 }
 
 .banner-product-card .scroll-button {
